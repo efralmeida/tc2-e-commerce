@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "tc2-e-commerce"
+version = "0.1.0"
+description = "Projeto de e-commerce para o Tech Challenge 02"
+readme = "README.md"
+packages = [{ include = "tc2_ecommerce", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.scripts]
+tc2-e-commerce = "tc2_ecommerce.main:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "kaggle (>=2.2.2,<3.0.0)",
+    "dvc (>=3.67.1,<4.0.0)"
+]
