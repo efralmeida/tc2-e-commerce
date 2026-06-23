@@ -5,6 +5,30 @@ __pycache__/
 .ruff_cache/
 dist/
 build/
+pauta.md
 
-# Raw datasets downloaded locally
+# datasets e amostras de exploração baixados localmente
 data/raw/*.zip
+data/interim/*.xlsx
+
+# MLflow experiments (local, não commitada)
+mlruns/
+.mlflow/
+
+# Jupyter
+.ipynb_checkpoints/
+notebook/.ipynb_checkpoints/
+
+# DVC cache e lock (opcional - usar se não compartilhar via remoto)
+# .dvc/cache
+# dvc.lock
+
+# Temporary files
+*.tmp
+*.log
+*.swp
+*.swo
+*~
+
+
+

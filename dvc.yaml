@@ -1,0 +1,43 @@
+stages:
+  prepare:
+    cmd: python -c "import sys; sys.path.insert(0, 'src'); from tc2_ecommerce.data import prepare_data; prepare_data()"
+    deps:
+      - data/raw/retailrocket/events.csv
+      - data/raw/retailrocket/item_properties_part1.csv
+      - data/raw/retailrocket/item_properties_part2.csv
+    outs:
+      - data/processed/train.csv
+      - data/processed/valid.csv
+      - data/processed/test.csv
+    metrics:
+      - data/processed/split_info.json:
+          cache: false
+
+  baseline_experiments:
+    cmd: jupyter nbconvert --to notebook --execute notebook/baseline_experiments.ipynb --output-dir=notebook
+    deps:
+      - data/processed/train.csv
+      - data/processed/valid.csv
+      - notebook/baseline_experiments.ipynb
+    outs:
+      - models/dummy_recommendations.json
+      - models/baseline_item_item_recommendations.json
+      - models/baseline_metrics_detailed.json
+      - baseline_recs_sample.json
+    metrics:
+      - models/baseline_experiments_comparison.csv:
+          cache: false
+
+  # Proxima etapa: Neural Network
+  # neural_experiments:
+  #   cmd: jupyter nbconvert --to notebook --execute notebook/neural_experiments.ipynb --output-dir=notebook
+  #   deps:
+  #     - data/processed/train.csv
+  #     - data/processed/valid.csv
+  #     - notebook/neural_experiments.ipynb
+  #   outs:
+  #     - models/neural_model.pth
+  #     - models/neural_recommendations.json
+  #   metrics:
+  #     - models/neural_metrics.csv:
+  #         cache: false
