@@ -10,6 +10,15 @@ pauta.md
 # datasets e amostras de exploração baixados localmente
 data/raw/*.zip
 data/interim/*.xlsx
+data/processed/train.csv
+data/processed/valid.csv
+data/processed/test.csv
+
+# artefatos gerados pelos baselines (rastreados via DVC)
+models/dummy_recommendations.json
+models/baseline_item_item_recommendations.json
+models/baseline_metrics_detailed.json
+notebook/baseline_recs_sample.json
 
 # MLflow experiments (local, não commitada)
 mlruns/

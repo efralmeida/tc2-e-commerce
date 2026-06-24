@@ -1,0 +1,72 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python -c "import sys; sys.path.insert(0, 'src'); from 
+      tc2_ecommerce.data import prepare_data; prepare_data()"
+    deps:
+    - path: data/raw/retailrocket/events.csv
+      hash: md5
+      md5: fddaf7c1c6a9df23a726500a08ffdd7e
+      size: 94237913
+    - path: data/raw/retailrocket/item_properties_part1.csv
+      hash: md5
+      md5: cb43a0682a1af76f1c1b60f9163ae47b
+      size: 484315749
+    - path: data/raw/retailrocket/item_properties_part2.csv
+      hash: md5
+      md5: e74ec953e7b192920b195dfd82dc2a4e
+      size: 408929907
+    outs:
+    - path: data/processed/split_info.json
+      hash: md5
+      md5: f42744b07b1eb00d3996c18637785720
+      size: 610
+    - path: data/processed/test.csv
+      hash: md5
+      md5: e4f47290aef2f713d2f804b8b11db9d7
+      size: 24063744
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 6f11eabd115b8ff3350e2dd2124747d6
+      size: 112278331
+    - path: data/processed/valid.csv
+      hash: md5
+      md5: e2c744a9bdb23d19d8799237361529d6
+      size: 24067435
+  baseline_experiments:
+    cmd: jupyter nbconvert --to notebook --execute 
+      notebook/baseline_experiments.ipynb --output-dir=notebook
+    deps:
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 6f11eabd115b8ff3350e2dd2124747d6
+      size: 112278331
+    - path: data/processed/valid.csv
+      hash: md5
+      md5: e2c744a9bdb23d19d8799237361529d6
+      size: 24067435
+    - path: notebook/baseline_experiments.ipynb
+      hash: md5
+      md5: e025373d02a0390619dc82b8479b5e36
+      size: 43101
+    outs:
+    - path: models/baseline_experiments_comparison.csv
+      hash: md5
+      md5: f60a19c7e33be294dc03bc39734b4492
+      size: 5331
+    - path: models/baseline_item_item_recommendations.json
+      hash: md5
+      md5: 77d5a81215c1af6f3b826dc12d5d2fdb
+      size: 853164
+    - path: models/baseline_metrics_detailed.json
+      hash: md5
+      md5: ff152ecfe6ee16e19edcfc068d659c14
+      size: 13728
+    - path: models/dummy_recommendations.json
+      hash: md5
+      md5: e1c9e234d362bf459dd2bb2293d6a5c4
+      size: 1654004
+    - path: notebook/baseline_recs_sample.json
+      hash: md5
+      md5: 84b9ff6fa24a8c33b657ab31294babad
+      size: 342

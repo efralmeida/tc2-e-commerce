@@ -23,7 +23,7 @@ stages:
       - models/dummy_recommendations.json
       - models/baseline_item_item_recommendations.json
       - models/baseline_metrics_detailed.json
-      - baseline_recs_sample.json
+      - notebook/baseline_recs_sample.json
     metrics:
       - models/baseline_experiments_comparison.csv:
           cache: false
