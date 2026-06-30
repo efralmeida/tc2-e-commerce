@@ -3,7 +3,6 @@ Módulo de preparação de dados para DVC pipeline.
 
 Funções para carregar dados brutos, aplicar split temporal e salvar processados.
 """
-
 import json
 from pathlib import Path
 

@@ -1,4 +1,5 @@
 .venv/
+.vscode/
 __pycache__/
 .pytest_cache/
 .mypy_cache/
@@ -23,6 +24,11 @@ notebook/baseline_recs_sample.json
 # MLflow experiments (local, não commitada)
 mlruns/
 .mlflow/
+
+# Environment variables (local, não commitada)
+.env
+.env.local
+.env.*.local
 
 # Jupyter
 .ipynb_checkpoints/

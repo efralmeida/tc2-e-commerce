@@ -1,0 +1,4 @@
+[core]
+    remote = s3-tc2
+['remote "s3-tc2"']
+    url = s3://tc2-e-commerce/dvc/cache
