@@ -6,7 +6,7 @@ readme = "README.md"
 packages = [{ include = "tc2_ecommerce", from = "src" }]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.12,<3.15"
 pydantic-settings = "^2.0.0"
 
 [tool.poetry.scripts]
@@ -29,5 +29,6 @@ dev = [
     "numpy (>=2.4.6,<3.0.0)",
     "scikit-learn (>=1.9.0,<2.0.0)",
     "jupyter (>=1.1.1,<2.0.0)",
-    "ipykernel (>=7.3.0,<8.0.0)"
+    "ipykernel (>=7.3.0,<8.0.0)",
+    "torch (>=2.12.1,<3.0.0)"
 ]
