@@ -2,7 +2,7 @@
 
 Este documento explica como usar DVC e MLflow juntos para reprodutibilidade e rastreamento de experimentos.
 
-# TODO: Alterar de métricas de notebooks para rastreamento de metricas de produção.
+O fluxo abaixo cobre tanto métricas exploratórias em notebook quanto rastreamento para pipeline de produção.
 
 ## 🎯 Objetivo
 

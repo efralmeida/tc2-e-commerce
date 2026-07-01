@@ -46,14 +46,15 @@ htmlcov/
 
 # DVC
 .dvc/cache
-# TODO: Decidir se .dvc e dvc.lock devem entrar na imagem ou não
+.dvc/
+dvc.lock
+dvc.yaml
 
 # MLflow
 mlruns/
 .mlflow/
 
 # Data (raw e interim podem ser grandes)
-# TODO: Considerar usar volumes do Docker para dados
 data/raw/
 data/interim/
 

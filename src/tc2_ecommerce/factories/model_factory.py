@@ -158,17 +158,17 @@ class ModelFactory:
 
     cls._register_default(
       name="dummy",
-      import_path="src.tc2_ecommerce.models.dummy",
+      import_path="tc2_ecommerce.models.dummy",
       class_name="DummyBaseline",
     )
     cls._register_default(
       name="item_item",
-      import_path="src.tc2_ecommerce.models.item_item",
+      import_path="tc2_ecommerce.models.item_item",
       class_name="ItemItemCF",
     )
     cls._register_default(
       name="neural",
-      import_path="src.tc2_ecommerce.models.neural",
+      import_path="tc2_ecommerce.models.neural",
       class_name="NeuralRecommender",
     )
 
